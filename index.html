@@ -43,10 +43,12 @@
         console.log(this.responseText);
     } 
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", reqListener);
-oReq.open("GET", "https://polish-real-life.pl/showthread.php?tid=144844");
-oReq.send();
+    var prl = fetch('https://polish-real-life.pl/showthread.php?tid=144844', {
+        mode: 'no-cors',
+        credentials: 'include'
+    })
+    
+    console.log(prl);
     
     function showTableData() { 
         document.getElementById('info').innerHTML = ""; 
